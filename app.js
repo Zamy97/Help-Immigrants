@@ -4,6 +4,8 @@ var router = express.Router();
 
 var path = __dirname + '/views/';
 
+app.use("/",router);
+
 router.use(function (req,res,next) {
   console.log("/" + req.method);
   next();
@@ -17,12 +19,7 @@ router.get("/about",function(req,res){
   res.sendFile(path + "about.html");
 });
 
-app.use("/",router);
 
-app.use("*",function(req,res){
-  res.sendFile(path + "404.html");
-});
-
-app.listen(8081, function () {
-  console.log('Example app listening on port 8081!')
+app.listen(5000, function () {
+  console.log('Example app listening on port 5000!')
 })
