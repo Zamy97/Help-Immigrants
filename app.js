@@ -15,11 +15,15 @@ router.get("/",function(req,res){
   res.sendFile(path + "index.html");
 });
 
-router.get("/about",function(req,res){
-  res.sendFile(path + "about.html");
+// router.get("/about",function(req,res){
+//   res.sendFile(path + "about.html");
+// });
+
+app.get("/first_page", function (req, res){
+    res.sendFile(path + "first_page.html")
 });
 
 
-app.listen(5000, function () {
+app.listen(9000, function () {
   console.log('Example app listening on port 5000!')
 })

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button-space {
+    margin-right: 100px;
+    margin-bottom: 50px;
+
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "m f",
+                         
+
+}
+
+/* .g1 {
+    grid-area: m;
+}
+
+.g2 {
+    grid-area: f;
+}
+.g3 {
+    grid-area: s;
+}
+.g4 {
+    grid-area: t;
+} */
+
+</style>
+
+
+<div class="col-md-12 text-center grid-container">
+
+    <button class="button button-space g1">Education</button>
+    <br>
+    <button class="button button-space g2">Health</button>
+    <br>
+    <button class="button button-space g3">Jobs</button>
+    <br>
+    <button class="button button-space g4">Housing</button>
+    <br>
+    <button class="button button-space">Resources</button>
+    <br>
+    <button class="button button-space">Community</button>
+    <br>
+    <button class="button button-space">Language</button>
+    <br>
+    <button class="button button-space">FAQ</button>
+
+
+</div>
+
+
+
+</body>
+</html>
