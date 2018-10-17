@@ -23,6 +23,10 @@ app.get("/first_page", function (req, res){
     res.sendFile(path + "first_page.html")
 });
 
+app.get("/school_search", function (req, res){
+    res.sendFile(path + "school_search.html")
+});
+
 
 app.listen(9000, function () {
   console.log('Example app listening on port 9000!')
