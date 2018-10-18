@@ -10,19 +10,16 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="display-4 mb-4">School Digger API Response</h1>
+    <h1 class="display-4 mb-4">School Digger API Response:</h1>
     <div class="d-flex">
       <button class="btn btn-warning mr-4" id="getPosts">Get API DATA</button>
+      <button class="btn btn-warning mr-4" id="getSchools">Get API DATA FROM school Digger</button>
     </div>
     <hr>
     <div id="output"></div>
-    <!-- <form id="addPost"> -->
-    </form>
   </div>
   <script>
     document.getElementById('getPosts').addEventListener('click', getPosts);
-
-
     function getPosts(){
       fetch('https://jsonplaceholder.typicode.com/posts')
       .then((res) => res.json())
@@ -40,43 +37,38 @@
       })
     }
   </script>
+
+  <script>
+      document.getElementById('getSchools').addEventListener('click', getSchools);
+      function getSchools(){
+
+    // Test School Digger API
+    const appID = '94476d8f';
+    const appKey = '3cac58cc826b8abfc3cf0447f0842afe';
+    // fetch(`https://api.schooldigger.com/v1.1/autocomplete/schools?appID=${appID}&appKey=${appKey}&q=Sunset`).then((res) => {
+    fetch('https://api.myjson.com/bins/wphj4')
+    .then((res) => {
+        return res.json();
+    }).then((json) => {
+        json.schoolList.forEach(function(school){
+            output += `
+              <div class="card card-body mb-3">
+                <h3>${school.schoolName}</h3>
+                <h4>${school.address.city}<h4>
+              </div>
+            `;
+
+            console.log(school.schoolName);
+            console.log(school.address);
+        })
+        document.getElementById('output').innerHTML = output;
+    }).catch((err) => {
+        console.log(err.message);
+})};
+</script>
+
+
+
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!-- <script>
-function displaySchools(json) {
-    // Parse JSON and create HTML elements to display
-    //Append elements to the DOM
-    console.log("displaySchools");
-    for(const key of Object.keys(json)) {
-        console.log(key);
-    }
-}
-
-  // Test School Digger API
-  const appID = 'ac3b406a';
-  const appKey = 'dca4214d5196c35d2f50ad6d009b5b14';
-  fetch(`https://api.schooldigger.com/v1.1/autocomplete/schools?appID=${appID}&appKey=${appKey}&q=Sunset`).then((res)=>{
-      return res.json();
-  }).then((json)=>{
-      console.log("got response")
-      displaySchools(json)
-      console.log(json);
-
-  }).catch((err) => {
-      console.log(err.message);
-  });
-
-
-
-
-
-</script> -->
