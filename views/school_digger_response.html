@@ -39,18 +39,21 @@
   </script>
 
   <script>
-      document.getElementById('submit_to_api').addEventListener('click', submit_to_api);
+      document.addEventListener('click', submit_to_api);
       function submit_to_api(){
+
+          // Mitchell api Key
     // Test School Digger API
 
-        var input1 = document.getElementById('an_address');
-        const appID = '325d1990';
-        const appKey = 'bc40cf30e034ff3ca17510d202737802';
+        const input1 = document.getElementById('an_address');
+        console.log(an_address);
+        const appID = '94476d8f'; //94476d8f
+        const appKey = '3cac58cc826b8abfc3cf0447f0842afe'; //3cac58cc826b8abfc3cf0447f0842afe
 
 
         // fetch(`https://api.schooldigger.com/v1.1/autocomplete/schools?appID=${appID}&appKey=${appKey}&q=Sunset`).then((res) => {
-        fetch(`https://api.schooldigger.com/v1.1/schools?&q=${input1.value()}${}&appID=${appID}&appKey=${appKey}`)
-        //fetch('https://api.myjson.com/bins/wphj4')
+        //fetch(`https://api.schooldigger.com/v1.1/schools?&q=${input1.value()}&appID=${appID}&appKey=${appKey}`)
+        fetch('https://api.myjson.com/bins/wphj4')
         .then((res) => {
             return res.json();
         }).then((json) => {
