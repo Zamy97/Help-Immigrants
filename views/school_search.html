@@ -40,21 +40,23 @@ input[type=text]:focus {
     width: 100%;
 }
 </style>
+
+<script src="school_digger_response" type="text/javascript"></script>
 </head>
 <body>
 
 <div class="jumbtron text-center">
     <h2>Find k-12 schools and school district you are in: </h2>
+
     <br>
 
 </div>
-
 <div class="jumbtron text-center">
     <form>
-        <input type="text" name="search" placeholder="Type your address:">
+        <input id="an_address" type="text" name="search" placeholder="Type your address:">
     </form>
     <br>
-    <button type="submit" class="btn btn-primary btn-lg" onclick="location.href='school_digger_response'" >Submit</button>
+    <button id="submit_to_api" type="submit" class="btn btn-primary btn-lg" onclick="location.href='school_digger_response'" >Submit</button>
 
 </div>
 

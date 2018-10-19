@@ -39,36 +39,36 @@
   </script>
 
   <script>
-      document.getElementById('getSchools').addEventListener('click', getSchools);
-      function getSchools(){
-
+      document.getElementById('submit_to_api').addEventListener('click', submit_to_api);
+      function submit_to_api(){
     // Test School Digger API
-    const appID = '94476d8f';
-    const appKey = '3cac58cc826b8abfc3cf0447f0842afe';
-    // fetch(`https://api.schooldigger.com/v1.1/autocomplete/schools?appID=${appID}&appKey=${appKey}&q=Sunset`).then((res) => {
-    fetch('https://api.myjson.com/bins/wphj4')
-    .then((res) => {
-        return res.json();
-    }).then((json) => {
-        let output = '<h2 class="mb-4">Schools Near you</h2>';
-        json.schoolList.forEach(function(school){
-            output += `
-              <div class="card card-body mb-3">
-                <h3>${school.schoolName}</h3>
-                <h4>${school.address.street}</h4>
-                <h4>${school.address.city}<h4>
-                <a href="${school.url}">School Website</a>
-              </div>
-            `;
-        })
-        document.getElementById('output').innerHTML = output;
-    }).catch((err) => {
-        console.log(err.message);
-})};
+
+        var input1 = document.getElementById('an_address');
+        const appID = '325d1990';
+        const appKey = 'bc40cf30e034ff3ca17510d202737802';
+
+
+        // fetch(`https://api.schooldigger.com/v1.1/autocomplete/schools?appID=${appID}&appKey=${appKey}&q=Sunset`).then((res) => {
+        fetch(`https://api.schooldigger.com/v1.1/schools?&q=${input1.value()}${}&appID=${appID}&appKey=${appKey}`)
+        //fetch('https://api.myjson.com/bins/wphj4')
+        .then((res) => {
+            return res.json();
+        }).then((json) => {
+            let output = '<h2 class="mb-4">Schools Near you:</h2>';
+            json.schoolList.forEach(function(school){
+                output += `
+                  <div class="card card-body mb-3">
+                    <h3>${school.schoolName}</h3>
+                    <h4>${school.address.street}</h4>
+                    <h4>${school.address.city}<h4>
+                    <a href="${school.url}">School Website</a>
+                  </div>
+                `;
+            })
+            document.getElementById('output').innerHTML = output;
+        }).catch((err) => {
+            console.log(err.message);
+    })};
 </script>
-
-
-
-
 </body>
 </html>
