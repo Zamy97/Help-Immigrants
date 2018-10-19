@@ -38,15 +38,15 @@
     }
   </script>
 
-  <script>
-      document.addEventListener('click', submit_to_api);
-      function submit_to_api(){
+<script>
+      document.getElementById('getSchools').addEventListener('click', getSchools);
+      function getSchools(){
 
           // Mitchell api Key
     // Test School Digger API
 
-        const input1 = document.getElementById('an_address');
-        console.log(an_address);
+        // const input1 = document.getElementById('an_address');
+        // console.log(an_address);
         const appID = '94476d8f'; //94476d8f
         const appKey = '3cac58cc826b8abfc3cf0447f0842afe'; //3cac58cc826b8abfc3cf0447f0842afe
 
@@ -73,5 +73,7 @@
             console.log(err.message);
     })};
 </script>
+
+
 </body>
 </html>

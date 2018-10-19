@@ -42,38 +42,71 @@ input[type=text]:focus {
 </style>
 
 <script src="school_digger_response" type="text/javascript"></script>
+
 </head>
 <body>
 
+<div class="container">
+  <div class="d-flex">
+  </div>
+  <hr>
+  <div id="output"></div>
+</div>
+
 <div class="jumbtron text-center">
     <h2>Find k-12 schools and school district you are in: </h2>
-
     <br>
-
 </div>
 <div class="jumbtron text-center">
     <form>
         <input id="an_address" type="text" name="search" placeholder="Type your address:">
     </form>
     <br>
-    <button id="submit_to_api" type="submit" class="btn btn-primary btn-lg" onclick="location.href='school_digger_response'" >Submit</button>
-
+    <button id="getSchools" type="submit" class="btn btn-primary btn-lg"  >Submit</button>
 </div>
 
-<br>
+<script>
+  document.getElementById('getSchools').addEventListener('click', getSchools);
+  function getSchools(){
+    // const input1 = document.getElementById('an_address');
+    // console.log(an_address);
+    const appID = '94476d8f'; //94476d8f
+    const appKey = '3cac58cc826b8abfc3cf0447f0842afe'; //3cac58cc826b8abfc3cf0447f0842afe
 
+    //fetch(`https://api.schooldigger.com/v1.1/schools?&q=${input1.value()}&appID=${appID}&appKey=${appKey}`)
+    fetch('https://api.myjson.com/bins/wphj4')
+    .then((res) => {
+        return res.json();
+    }).then((json) => {
+        let output = '<h2 class="mb-4">Schools Near you:</h2>';
+        json.schoolList.forEach(function(school){
+            output += `
+              <div class="card card-body mb-3">
+                <h3>${school.schoolName}</h3>
+                <h4>${school.address.street}</h4>
+                <h4>${school.address.city}<h4>
+                <a href="${school.url}">School Website</a>
+              </div>
+            `;
+        })
+        document.getElementById('output').innerHTML = output;
+    }).catch((err) => {
+        console.log(err.message);
+})};
+</script>
+
+<br>
 <div class="jumbtron text-center">
     <h2>Find College info: </h2>
     <br>
 </div>
-
 
 <div class="jumbtron text-center">
     <form>
         <input type="text" name="search" placeholder="Type your address: ">
     </form>
     <br>
-    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg" onclick="location.href='school_digger_response'" >Submit</button>
 </div>
 
 
