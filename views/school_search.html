@@ -17,6 +17,17 @@
     </ul>
   </div>
 </nav>
+<div class="jumbtron text-center">
+    <h2>Find k-12 schools and school district you are in: </h2>
+    <br>
+</div>
+<div class="jumbtron text-center">
+    <form>
+        <input id="an_address" type="text" name="search" placeholder="Type your address:">
+    </form>
+    <br>
+    <button id="getSchools" type="submit" class="btn btn-primary btn-lg"  >Submit</button>
+</div>
 
 <br>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,17 +64,7 @@ input[type=text]:focus {
   <div id="output"></div>
 </div>
 
-<div class="jumbtron text-center">
-    <h2>Find k-12 schools and school district you are in: </h2>
-    <br>
-</div>
-<div class="jumbtron text-center">
-    <form>
-        <input id="an_address" type="text" name="search" placeholder="Type your address:">
-    </form>
-    <br>
-    <button id="getSchools" type="submit" class="btn btn-primary btn-lg"  >Submit</button>
-</div>
+
 
 <script>
   document.getElementById('getSchools').addEventListener('click', getSchools);
