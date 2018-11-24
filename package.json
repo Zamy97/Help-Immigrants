@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Zamy97/Help-Immigrants#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "handlebars": "^4.0.12"
   }
 }
