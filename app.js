@@ -1,8 +1,9 @@
-var express = require("express");
-var app = express();
-var router = express.Router();
+const express = require("express");
+const app = express();
+const router = express.Router();
+const port = process.env.PORT || 8080;
 
-var path = __dirname + '/views/';
+const path = __dirname + '/views/';
 
 app.use("/",router);
 
@@ -29,8 +30,12 @@ app.get("/school_search", function (req, res){
 
 app.get("/school_digger_response", function(req, res){
     res.sendFile(path + "school_digger_response.html")
-})
+});
 
-app.listen(9000, function () {
-  console.log('Example app listening on port 9000!')
-})
+const server=app.listen(port,function() {
+console.log("app running on port 8080");
+});
+
+// app.listen(9000, function () {
+//   console.log('Example app listening on port 9000!')
+// })
