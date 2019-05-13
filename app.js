@@ -24,6 +24,10 @@ app.get("/first_page", function (req, res){
     res.sendFile(path + "first_page.html")
 });
 
+app.get("/bangla_page", function (req, res){
+    res.sendFile(path + "bangla_page.html")
+});
+
 app.get("/school_search", function (req, res){
     res.sendFile(path + "school_search.html")
 });
